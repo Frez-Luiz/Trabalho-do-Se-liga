@@ -1,17 +1,12 @@
-import datetime
+import random
 
 def calcular_idade():
-    """Função para calcular a idade com base no ano de nascimento."""
-    try:
-        ano_nascimento = int(input("Digite o ano de nascimento (YYYY): "))
-        ano_atual = datetime.date.today().year
-        idade = ano_atual - ano_nascimento
-        print(f"\nSua idade é de aproximadamente {idade} anos.\n")
-    except ValueError:
-        print("\nEntrada inválida. Por favor, digite um ano válido.\n")
+    nome = input("Digite seu nome: ")
+    print ("Bem-vindo, " + nome + "!")
+    idade = int(input("Digite sua idade: "))
+    print (f"No próximo ano você terá {idade + 1} anos." )
 
-def calcular_preco_compra():
-    """Função para calcular o preço total de uma compra."""
+def calcular_compra():
     total = 0
     while True:
         try:
@@ -24,28 +19,29 @@ def calcular_preco_compra():
     print(f"\nO preço total da compra é de R$ {total:.2f}.\n")
 
 def menu_principal():
-    """Função principal que exibe o menu e gerencia as opções."""
     while True:
-        print("="*30)
-        print(" MINI-PROGRAMA COM MENU")
-        print("="*30)
-        print("1 - Calcular idade")
-        print("2 - Calcular preço da compra")
-        print("3 - Sair")
-        print("="*30)
+        print ("__________________________________________\n")
+        print ("////////////////////////////////////////////")
+        print ("////           Luiz Felipe              ////")
+        print ("//////   Bem vindo ao meu programa!   //////")
+        print ("////////////////////////////////////////////")
+        print ("____________________________________________")
 
-        opcao = input("Escolha uma opção (1, 2 ou 3): ")
+        print("     Qual você quer utilizar?  ")
+        print(" (1)- Calcular Idade (2)- Calcular Compra (3)- Sair")
+
+
+        opcao = input("Escolha uma opção: ")
 
         if opcao == '1':
             calcular_idade()
         elif opcao == '2':
-            calcular_preco_compra()
+            calcular_compra()
         elif opcao == '3':
-            print("Saindo do programa. Obrigado!")
+            print("Você saiu do programa!")
             break
         else:
-            print("\nOpção inválida. Por favor, escolha 1, 2 ou 3.\n")
+            print("Opção inválida. Por favor, escolha as opções presentes no programa!")
 
-# Garante que o menu principal seja executado quando o script iniciar
 if __name__ == "__main__":
     menu_principal()
