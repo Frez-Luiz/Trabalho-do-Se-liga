@@ -1,21 +1,19 @@
-import random
 
 def calcular_idade():
-    nome = input("Digite seu nome: ")
-    print ("Bem-vindo, " + nome + "!")
-    idade = int(input("Digite sua idade: "))
-    print (f"No próximo ano você terá {idade + 1} anos." )
+    ano_atual = int(input("Digite o ano atual: "))
+    ano_nascimento = int(input("Digite o ano que você nasceu: "))
+    idade = ano_atual - ano_nascimento
+
+    print(f"\n Você tem {idade} anos! \n")
+
 
 def calcular_compra():
     total = 0
     while True:
-        try:
-            preco_item = float(input("Digite o preço do item (ou 0 para finalizar): R$ "))
+            preco_item = float(input("Digite o preço do produto (Para finalizar clique 0): R$ "))
             if preco_item == 0:
                 break
             total += preco_item
-        except ValueError:
-            print("Preço inválido. Tente novamente.")
     print(f"\nO preço total da compra é de R$ {total:.2f}.\n")
 
 def menu_principal():
